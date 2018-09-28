@@ -5,6 +5,8 @@ _addon.commands = {'ca','chainalert'}
 
 packets = require('packets')
 
+alert_gearswap = false
+
 ----------------------------------------------------------------------
 -- Skillchain table
 ----------------------------------------------------------------------
@@ -63,11 +65,43 @@ windower.register_event('incoming chunk', function(id, original, modified, injec
                     local added_effect_message_id = packet['Target 1 Action 1 Added Effect Message']
                     if skillchains[added_effect_message_id] then
                         local last_skillchain = skillchains[added_effect_message_id]
-                        windower.add_to_chat(207, '<----- Skillchain: '..last_skillchain..' Open ----->')
+                        windower.add_to_chat(207, '<----- Skillchain: '..last_skillchain..' Opened ----->')
+                        if alert_gearswap == true then
+                            windower.send_command('gs c toggle burst mode on')
+                        end
                         coroutine.sleep(9)
                         windower.add_to_chat(207, '<----- Skillchain: '..last_skillchain..' Closed ----->')
+                        if alert_gearswap == true then
+                            windower.send_command('gs c toggle burst mode off')
+                        end
                     end
                 end
+            end
+        end
+    end
+end)
+
+----------------------------------------------------------------------
+-- Add Command Listener
+----------------------------------------------------------------------
+windower.register_event('addon command', function(...)
+    local args = T{...}
+    if args ~= nil then
+        local comm = table.remove(args,1):lower()
+        if comm == 'gearswap' then
+            if alert_gearswap == true then
+                alert_gearswap = false
+                windower.add_to_chat(207, "ChainAlert: Gearswap alert OFF")
+            else
+                alert_gearswap = true
+                windower.add_to_chat(207, "ChainAlert: Gearswap alert ON")
+            end
+        elseif comm == 'help' then
+            local helptext = [[AzureSets - Command List:')
+            1. gearswap - Allows the addon to alert gearswap that a burst is occurring.
+            2. help --Shows this menu.]]
+            for _, line in ipairs(helptext:split('\n')) do
+                windower.add_to_chat(207, line..chat.controls.reset)
             end
         end
     end
