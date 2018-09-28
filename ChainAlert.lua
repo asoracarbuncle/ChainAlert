@@ -97,11 +97,11 @@ windower.register_event('addon command', function(...)
                 windower.add_to_chat(207, "ChainAlert: Gearswap alert ON")
             end
         elseif comm == 'help' then
-            local helptext = [[AzureSets - Command List:')
-            1. gearswap - Allows the addon to alert gearswap that a burst is occurring.
-            2. help --Shows this menu.]]
+            local helptext = [[ChainAlert - Command List:
+1. gearswap - Allows the addon to alert gearswap that a burst is occurring.
+2. help --Shows this menu.]]
             for _, line in ipairs(helptext:split('\n')) do
-                windower.add_to_chat(207, line..chat.controls.reset)
+                windower.add_to_chat(207, line)
             end
         end
     end
