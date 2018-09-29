@@ -27,7 +27,7 @@ settings = config.load(defaults)
 -- Initialize some global variables
 alert_gearswap = false
 text_box_header = _addon.name.." v".._addon.version.."\n"
-text_box_body = "Skillchain: None\n"
+text_box_body = "Listening...\n"
 
 -- Initialize the textbox
 text_box = texts.new(text_box_header..text_box_body)
@@ -114,22 +114,22 @@ skillchains = {
 }
 
 skillchain_info = {
-    ["Light"] = "Tier: 3\nAlignment: Fire, Wind, Thunder & Light\nFollow With: Light",
-    ["Darkness"] = "Tier: 3\nAlignment: Ice, Stone, Water & Dark\nFollow With: Darkness",
-    ["Gravitation"] = "Tier: 2\nAlignment: Stone & Dark\nFollow With: Distortion or Fragmentation",
-    ["Fragmentation"] = "Tier: 2\nAlignment: Thunder & Wind\nFollow With: Distortion or Fusion",
-    ["Distortion"] = "Tier: 2\nAlignment: Ice & Water\nFollow With: Fusion or Gravitation",
-    ["Fusion"] = "Tier: 2\nAlignment: Fire & Light\nFollow With: Fragmentation or Gravitation",
-    ["Compression"] = "Tier: 1\nAlignment: Dark\nFollow With: Detonation or Transfixion",
-    ["Liquefaction"] = "Tier: 1\nAlignment: Fire\nFollow With: Impaction or Scission",
-    ["Induration"] = "Tier: 1\nAlignment: Ice\nFollow With: Compression, Impaction, or Reverberation",
-    ["Reverberation"] = "Tier: 1\nAlignment: Water\nFollow With: Induration or Impaction",
-    ["Transfixion"] = "Tier: 1\nAlignment: Light\nFollow With: Compression, Reverberation or Scission",
-    ["Scission"] = "Tier: 1\nAlignment: Earth\nFollow With: Detonation, Liquefaction or Reverberation",
-    ["Detonation"] = "Tier: 1\nAlignment: Wind\nFollow With: Compression or Scission",
-    ["Impaction"] = "Tier: 1\nAlignment: Thunder\nFollow With: Liquefaction or Detonation",
-    ["Radiance"] = "Tier: 4\nAlignment: Fire, Wind, Thunder & Light\nFollow With: None",
-    ["Umbra"] = "Tier: 4\nAlignment: Ice, Stone, Water & Dark\nFollow With: None",
+    ["Light"] = "Tier: III\nAlignment: Fire, Wind, Thunder & Light\nFollow With: Light",
+    ["Darkness"] = "Tier: III\nAlignment: Ice, Stone, Water & Dark\nFollow With: Darkness",
+    ["Gravitation"] = "Tier: II\nAlignment: Stone & Dark\nFollow With: Distortion or Fragmentation",
+    ["Fragmentation"] = "Tier: II\nAlignment: Thunder & Wind\nFollow With: Distortion or Fusion",
+    ["Distortion"] = "Tier: II\nAlignment: Ice & Water\nFollow With: Fusion or Gravitation",
+    ["Fusion"] = "Tier: II\nAlignment: Fire & Light\nFollow With: Fragmentation or Gravitation",
+    ["Compression"] = "Tier: I\nAlignment: Dark\nFollow With: Detonation or Transfixion",
+    ["Liquefaction"] = "Tier: I\nAlignment: Fire\nFollow With: Impaction or Scission",
+    ["Induration"] = "Tier: I\nAlignment: Ice\nFollow With: Compression, Impaction, or Reverberation",
+    ["Reverberation"] = "Tier: I\nAlignment: Water\nFollow With: Induration or Impaction",
+    ["Transfixion"] = "Tier: I\nAlignment: Light\nFollow With: Compression, Reverberation or Scission",
+    ["Scission"] = "Tier: I\nAlignment: Earth\nFollow With: Detonation, Liquefaction or Reverberation",
+    ["Detonation"] = "Tier: I\nAlignment: Wind\nFollow With: Compression or Scission",
+    ["Impaction"] = "Tier: I\nAlignment: Thunder\nFollow With: Liquefaction or Detonation",
+    ["Radiance"] = "Tier: IV\nAlignment: Fire, Wind, Thunder & Light\nFollow With: None",
+    ["Umbra"] = "Tier: IV\nAlignment: Ice, Stone, Water & Dark\nFollow With: None",
 }
 
 
